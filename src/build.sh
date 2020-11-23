@@ -4,11 +4,7 @@
 printf "\033[1;36;48m" ; clear
 
 # Get current working directory
-BASEDIR=$(dirname "$0")
-
-if [[ "$BASEDIR" == "." ]]; then
-   BASEDIR=$(pwd)
-fi
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Get the app version
 VERSION="$($BASEDIR/package version)"
